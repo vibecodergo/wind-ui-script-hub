@@ -1,0 +1,12 @@
+{
+  "Type": "SpriteSheet",
+  "FPS": 10,
+  "Columns": 4,
+  "Rows": 4,
+  "FrameCount": 16,
+  "FrameSize": [
+    250,
+    140
+  ],
+  "SourceDurationMs": 1600
+}
