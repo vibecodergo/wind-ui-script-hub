@@ -1,5 +1,5 @@
--- Public loader for emoboy723/wind-ui-script-hub.
-local url = "https://raw.githubusercontent.com/emoboy723/wind-ui-script-hub/main/dist/script-hub.lua"
+-- Public loader for vibecodergo/wind-ui-script-hub.
+local url = "https://raw.githubusercontent.com/vibecodergo/wind-ui-script-hub/main/dist/script-hub.lua"
 local downloaded, source = pcall(function() return game:HttpGet(url) end)
 assert(downloaded and type(source) == "string" and #source > 0,
 	"No se pudo descargar Script Hub: " .. tostring(source))
