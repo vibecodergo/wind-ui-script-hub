@@ -1,3 +1,51 @@
+## WindUI Script Hub Remastered
+
+Un centro de scripts para Roblox creado sobre [WindUI](https://github.com/Footagesus/WindUI). Incluye un fondo animado, búsqueda en el catálogo de ScriptBlox, filtros, favoritos, historial, editor local y ajustes.
+
+### Inicio rápido
+
+Ejecuta el cargador en un executor compatible:
+
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/vibecodergo/wind-ui-script-hub/main/loader.lua"))()
+```
+
+El cargador obtiene y ejecuta [`dist/script-hub.lua`](dist/script-hub.lua), que ya contiene WindUI y el sprite sheet. El executor debe permitir `game:HttpGet` y `loadstring`.
+
+`writefile` y `readfile` habilitan la persistencia local de favoritos, historial, ajustes y borradores. Sin esas funciones, la biblioteca queda disponible solo durante la sesión. `getcustomasset` o `getsynasset` permiten cargar el sprite sheet local; si no están disponibles, el hub sigue funcionando y el fondo animado puede quedar sin imagen.
+
+Los scripts del catálogo no se ejecutan al buscar, seleccionar o abrirlos. Para ejecutar uno hay que pulsar explícitamente **Ejecutar**. Revisa el código antes de ejecutarlo.
+
+## Funciones
+
+- **Inicio:** estado del catálogo, favoritos y actividad reciente.
+- **Explorar:** búsqueda paginada, filtros, etiquetas y vista previa del código.
+- **Favoritos e Historial:** colecciones locales que abren de nuevo la ficha del catálogo.
+- **Editor:** pegar código, cargar una selección, guardar un borrador y ejecutarlo manualmente.
+- **Ajustes:** controlar o desactivar el fondo, limpiar la caché y guardar la biblioteca.
+
+El hub consulta el catálogo de ScriptBlox en línea. Sus resultados, campos y disponibilidad dependen de ese proveedor. Las etiquetas de verificación reflejan los metadatos de ScriptBlox; no son una auditoría independiente. La interfaz muestra fechas solo cuando el proveedor las entrega.
+
+## Documentación y desarrollo
+
+- [Guía del hub y límites conocidos](docs/HubRemastered.md)
+- [Buscador ScriptBlox](docs/ScriptSearch.md)
+- [Fondo GIF y API](docs/GIFBackground.md)
+- [Código fuente del hub](examples/MinimalScriptHub.lua)
+- [Artefacto completo para ejecutar](dist/script-hub.lua)
+
+Para recompilar el hub desde el código fuente:
+
+```sh
+darklua process examples/MinimalScriptHub.lua dist/script-hub.lua --config build/darklua.dev.config.json
+lune run tests/ScriptSearch.luau
+lune run tests/HubStore.luau
+```
+
+WindUI conserva la licencia MIT del proyecto original. Consulta [LICENSE](LICENSE) y las licencias de dependencias incluidas.
+
+---
+
 ## Script Hub Remastered — emoboy723
 
 WindUI modificado con fondo animado de flores, búsqueda en ScriptBlox, etiquetas,
